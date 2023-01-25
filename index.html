@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Word Counter</title>
+</head>
+<body>
+    <style>
+
+textarea {
+    height: 150px;
+}
+
+    </style>
+  <div class="container">
+    <h1 class="text-center">Word Counter</h1>
+    <textarea class="form-control" id="input"></textarea>
+    <br>
+    <button class="btn btn-primary" onclick="countWords()">Count Words</button>
+    <br><br>
+    <p>Number of words: <span id="output"></span></p>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    function countWords() {
+  var text = document.getElementById("input").value;
+  var words = text.split(/\s+/).length;
+  document.getElementById("output").innerHTML = words;
+}
+
+  </script>
+</body>
+</html>
