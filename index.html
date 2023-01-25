@@ -3,30 +3,33 @@
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
-  <title>Word Counter</title>
+  <title>Word and Character Counter</title>
 </head>
 <body>
-    <style>
-
-textarea {
-    height: 150px;
-}
-
-    </style>
   <div class="container">
-    <h1 class="text-center">Word Counter</h1>
-    <textarea class="form-control" id="input"></textarea>
-    <br>
-    <button class="btn btn-primary" onclick="countWords()">Count Words</button>
+    <h1 class="text-center">Word and Character Counter</h1>
+    <div class="form-group">
+      <label for="input">Enter text:</label>
+      <textarea class="form-control" id="input"></textarea>
+    </div>
+    <button class="btn btn-primary" onclick="countWordsAndCharacters()">Count</button>
     <br><br>
-    <p>Number of words: <span id="output"></span></p>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Results:</h5>
+        <p class="card-text">Number of words: <span id="word-output"></span></p>
+        <p class="card-text">Number of characters: <span id="char-output"></span></p>
+      </div>
+    </div>
   </div>
   <script src="script.js"></script>
   <script>
-    function countWords() {
+    function countWordsAndCharacters() {
   var text = document.getElementById("input").value;
   var words = text.split(/\s+/).length;
-  document.getElementById("output").innerHTML = words;
+  var characters = text.length;
+  document.getElementById("word-output").innerHTML = words;
+  document.getElementById("char-output").innerHTML = characters;
 }
 
   </script>
